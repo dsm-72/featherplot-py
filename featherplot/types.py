@@ -13,7 +13,7 @@ __all__ = ['QUADFEATHER_REQUIRED_COLUMNS', 'QUADFEATHER_EXPECTED_COLUMNS', 'Lite
 # %% ../nbs/03_types.ipynb 3
 from rich.repr import auto as rich_auto
 from dataclasses import dataclass, field, asdict
-from typing import Optional, Union, Any, List, TypeAlias, Literal, Tuple, get_args
+from typing import Optional, Union, Any, List, TypeAlias, Literal, Tuple, get_args, Dict
 
 # %% ../nbs/03_types.ipynb 4
 #| export
@@ -124,9 +124,21 @@ Conditional: TypeAlias = Union[SingleArgumentConditonal, TwoArgumentConditional]
 @dataclass
 class BaseChannel:
     field: str
+
+    def export_tuple_as_list(self, d:Dict[str, Any], key:str) -> Dict[str, Any]:
+        val = d.get(key, None)
+        if val is not None:
+            if type(val) == tuple:
+                d[key] = list(val)
+        return d
     
     def to_dict(self) -> dict:
         d = asdict(self)
+
+        d = self.export_tuple_as_list(d, 'range')
+        d = self.export_tuple_as_list(d, 'domain')
+        d = self.export_tuple_as_list(d, 'categories')
+
         if 'human' in d and d['human'] is None:
             del d['human']
         if 'categories' in d and d['categories'] is None:

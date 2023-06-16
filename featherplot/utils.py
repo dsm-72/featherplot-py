@@ -113,9 +113,9 @@ def create_lambda_channel(field: str, col:pd.Series, **kwargs) -> LambdaChannel:
         raise MissingKwargsError('Must provide lfunc (lambda function))')
     try:
         # attempt to create LambdaChannel
-        domain = (col.min(), col.max())
+        domain = (col.min().tolist(), col.max().tolist())
         mapped = col.map(lfunc)
-        range = (mapped.min(), mapped.max())
+        range = (mapped.min().tolist(), mapped.max().tolist())
         channel = LambdaChannel(field=field, lfunc=lfunc, range=range, domain=domain, **kwargs)
     except:
         raise LambdaChannelError('Could not create LambdaChannel')
@@ -211,7 +211,7 @@ def create_color_channel(field:str, col:pd.Series, **kwargs) -> ColorChannel:
     try:
         if dtype == 'category':
             col = col.cat.as_ordered()
-            domain = int(col.cat.codes.min()), int(col.cat.codes.max())
+            domain = int(col.cat.codes.min().tolist()), int(col.cat.codes.max().tolist())
 
             cats = col.cat.categories.tolist() if len(col.cat.categories) <= 10 else None
             channel = CategoricalColorChannel(field=field, domain=domain, categories=cats, **kwargs)        
@@ -242,7 +242,7 @@ def create_root_channel(field:str, col:pd.Series, **kwargs) -> RootChannel:
         case _:
             # NOTE: not a bool, not a category, not a string, must be numeric
             # pd.api.types.is_number(a)
-            channel = BasicChannel(field=field, domain=(col.min(), col.max()), **kwargs)            
+            channel = BasicChannel(field=field, domain=(col.min().tolist(), col.max().tolist()), **kwargs)            
     
     if channel is None:
         raise ChannelCreationError('Could not create RootChannel')
