@@ -1,0 +1,14 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_paths.ipynb
+      - 01_files.ipynb
+      - 02_constants.ipynb
+      - 03_types.ipynb
+      - 04_utils.ipynb
+      - 06_rich.ipynb
+      - 07_typer.ipynb
+      - 08_commands.ipynb
+      - 09_deepscatter.ipynb
+      - XX_template.ipynb
