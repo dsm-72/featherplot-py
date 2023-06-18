@@ -584,22 +584,36 @@ class AnnDataProcessor:
 
     def get_sidecars(self):
         layer = self.adata.layers.get(self.layer, None)
+
+
         if layer is None:
             layer = self.adata.X
+
+        if hasattr(layer, 'toarray'):
+            layer = layer.toarray()
+
+        if hasattr(layer, 'todense'):
+            layer = layer.todense()
 
         df = pd.DataFrame(
             layer,
             columns=self.adata.var.index,
             index=self.adata.obs.index
         )
-
         return df
+    
+    @property
+    def emb_name(self):
+        return self.x_emb.replace('X_', '').upper()
 
-    def get_embedding(self):
-        df = self.adata.obsm.get(self.x_emb, None)        
-        # df_points = adata.obsm.get(EMB).rename({
-        #     'fake-SNE X': 'x','fake-SNE Y': 'y', 'fake-SNE Z': 'z'
-        # }, axis=1)
-        # df.loc[:, 'conditions'] = self.adata.obs.conditions
+    def get_embedding(self, add_conditions:bool=False):
+        emb = self.adata.obsm.get(self.x_emb, None)
+        cols = [f'{self.emb_name}_{i+1}' for i in range(emb.shape[1])]
+        df = pd.DataFrame(
+            emb, columns=cols, 
+            index=self.adata.obs.index
+        )
+        if add_conditions and 'conditions' in self.adata.obs.columns:        
+            df.loc[:, 'conditions'] = self.adata.obs.conditions        
         return df
 
