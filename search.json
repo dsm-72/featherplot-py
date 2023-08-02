@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "deepscatter.html",
+    "href": "deepscatter.html",
+    "title": "Deepscatter",
+    "section": "",
+    "text": "source\n\nadd_sidecars_cli\n\n add_sidecars_cli ()\n\n\nsource\n\n\nTileset\n\n Tileset (dir:pathlib.Path)\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nparse_args\n\n parse_args ()"
+  },
+  {
+    "objectID": "utils.html",
+    "href": "utils.html",
+    "title": "utils",
+    "section": "",
+    "text": "source"
+  },
+  {
+    "objectID": "utils.html#column-to-channel",
+    "href": "utils.html#column-to-channel",
+    "title": "utils",
+    "section": "Column to Channel",
+    "text": "Column to Channel\n\nsource\n\nSeriesToChannel\n\n SeriesToChannel (series:pandas.core.series.Series,\n                  is_sidecar:Optional[bool]=False,\n                  alt_name:Optional[str]=None)\n\n\nsource\n\n\ncreate_root_channel\n\n create_root_channel (field:str, col:pandas.core.series.Series, **kwargs)\n\n\nsource\n\n\ncreate_color_channel\n\n create_color_channel (field:str, col:pandas.core.series.Series, **kwargs)\n\n\nsource\n\n\ncreate_boolean_channel\n\n create_boolean_channel (field:str, col:pandas.core.series.Series,\n                         **kwargs)\n\n\nsource\n\n\ncreate_functional_channel\n\n create_functional_channel (field:str, col:pandas.core.series.Series,\n                            **kwargs)\n\n\nsource\n\n\ncreate_conditional_channel\n\n create_conditional_channel (field:str, col:pandas.core.series.Series,\n                             **kwargs)\n\n\nsource\n\n\ncreate_lambda_channel\n\n create_lambda_channel (field:str, col:pandas.core.series.Series,\n                        **kwargs)"
+  },
+  {
+    "objectID": "utils.html#dataframe-to-metadata",
+    "href": "utils.html#dataframe-to-metadata",
+    "title": "utils",
+    "section": "DataFrame to MetaData",
+    "text": "DataFrame to MetaData\n\nsource\n\nhandle_duplicate_columns\n\n handle_duplicate_columns (df:pandas.core.frame.DataFrame)\n\n\nsource\n\n\nDataFrameToMetadata\n\n DataFrameToMetadata (df:pandas.core.frame.DataFrame,\n                      sidecars:Optional[List[str]]=&lt;factory&gt;,\n                      embedding:Optional[List[str]]=&lt;factory&gt;,\n                      alt_names:Optional[Dict[str,str]]=&lt;factory&gt;,\n                      include_index:Optional[bool]=True)"
+  },
+  {
+    "objectID": "utils.html#anndata",
+    "href": "utils.html#anndata",
+    "title": "utils",
+    "section": "AnnData",
+    "text": "AnnData\n\nMocking AnnData\n\nsource\n\n\nMockSingleCellData\n\n MockSingleCellData (label:Optional[str]='barcode',\n                     c_str:Optional[str]='condition',\n                     n_str:Optional[str]='norm',\n                     n_genes:Optional[int]=100,\n                     n_points:Optional[int]=1000,\n                     emb_name:Optional[str]='MOCK',\n                     emb_dims:Optional[int]=3,\n                     n_conditions:Optional[int]=4,\n                     hvg_ratio:Optional[int]=5)\n\n\n\nProcessing AnnData back to DataFrames\n\nsource\n\n\nAnnDataProcessor\n\n AnnDataProcessor (adata:anndata._core.anndata.AnnData,\n                   x_emb:str='X_phate', layer:Optional[str]=None)"
+  },
+  {
+    "objectID": "types.html",
+    "href": "types.html",
+    "title": "Types",
+    "section": "",
+    "text": "source\n\n\n\n QuadFeatherColumnTypeGuard (types:Optional[~Literals]=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n TransformTypeGuard (types:Optional[~Literals]=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n ConditionalTypeGuard (types:Optional[~Literals]=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n LiteralTypeGuard (types:Optional[~Literals])\n\n\nsource\n\n\n\n\n CategoricalChannelError ()\n\n\nsource\n\n\n\n\n BasicChannelError ()\n\n\nsource\n\n\n\n\n ConstantChannelError ()\n\n\nsource\n\n\n\n\n ConditionalChannelError ()\n\n\nsource\n\n\n\n\n LambdaChannelError ()\n\n\nsource\n\n\n\n\n ChannelCreationError ()\n\n\nsource\n\n\n\n\n MissingKwargsError ()\n\n\nsource\n\n\n\n\n TypeGuardError ()"
+  },
+  {
+    "objectID": "types.html#typeguards",
+    "href": "types.html#typeguards",
+    "title": "Types",
+    "section": "",
+    "text": "source\n\n\n\n QuadFeatherColumnTypeGuard (types:Optional[~Literals]=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n TransformTypeGuard (types:Optional[~Literals]=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n ConditionalTypeGuard (types:Optional[~Literals]=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n LiteralTypeGuard (types:Optional[~Literals])\n\n\nsource\n\n\n\n\n CategoricalChannelError ()\n\n\nsource\n\n\n\n\n BasicChannelError ()\n\n\nsource\n\n\n\n\n ConstantChannelError ()\n\n\nsource\n\n\n\n\n ConditionalChannelError ()\n\n\nsource\n\n\n\n\n LambdaChannelError ()\n\n\nsource\n\n\n\n\n ChannelCreationError ()\n\n\nsource\n\n\n\n\n MissingKwargsError ()\n\n\nsource\n\n\n\n\n TypeGuardError ()"
+  },
+  {
+    "objectID": "types.html#deepscatter-types-classes",
+    "href": "types.html#deepscatter-types-classes",
+    "title": "Types",
+    "section": "Deepscatter Types & Classes",
+    "text": "Deepscatter Types & Classes\n\nsource\n\nCategoricalColorChannel\n\n CategoricalColorChannel (field:str, human:Optional[str]=None,\n                          range:Union[str,List[str],NoneType]=None,\n                          domain:Optional[List[str]]=None,\n                          categories:Optional[List[str]]=None)\n\n\nsource\n\n\nBasicColorChannel\n\n BasicColorChannel (field:str,\n                    transform:Optional[Literal['literal','linaer','log','s\n                    qrt']]='literal',\n                    range:Union[str,List[str],NoneType]=None, domain:Optio\n                    nal[Tuple[Union[int,float],Union[int,float]]]=None,\n                    human:Optional[str]=None)\n\n\nsource\n\n\nCategoricalChannel\n\n CategoricalChannel (field:str, human:Optional[str]=None)\n\n\nsource\n\n\nBasicBooleanChannel\n\n BasicBooleanChannel (field:str,\n                      transform:Optional[Literal['literal','linaer','log',\n                      'sqrt']]='literal', range:Optional[Tuple[Union[int,f\n                      loat],Union[int,float]]]=(0, 1), domain:Optional[Tup\n                      le[Union[int,float],Union[int,float]]]=(0, 1),\n                      human:Optional[str]=None)\n\n\nsource\n\n\nBasicChannel\n\n BasicChannel (field:str,\n               transform:Optional[Literal['literal','linaer','log','sqrt']\n               ]='literal', range:Optional[Tuple[Union[int,float],Union[in\n               t,float]]]=None, domain:Optional[Tuple[Union[int,float],Uni\n               on[int,float]]]=None, human:Optional[str]=None)\n\n\nsource\n\n\nConstantColor\n\n ConstantColor (field:str, constant:Optional[str]='blue',\n                human:Optional[str]=None)\n\n\nsource\n\n\nConstantNumber\n\n ConstantNumber (field:str, constant:Union[int,float,NoneType]='number',\n                 human:Optional[str]=None)\n\n\nsource\n\n\nConstantBool\n\n ConstantBool (field:str, constant:Optional[bool]='boolean',\n               human:Optional[str]=None)\n\n\nsource\n\n\nLambdaChannel\n\n LambdaChannel (field:str, lfunc:str,\n                range:Tuple[Union[int,float],Union[int,float]],\n                domain:Tuple[Union[int,float],Union[int,float]],\n                human:Optional[str]=None)\n\n\nsource\n\n\nConditionalChannel\n\n ConditionalChannel (field:str, a:Union[int,float],\n                     b:Union[int,float,NoneType], op:Union[Literal['gt','l\n                     t','gte','lte','eq','neq'],Literal['between','within'\n                     ]], human:Optional[str]=None)\n\n\nsource\n\n\nBaseChannel\n\n BaseChannel (field:str)"
+  },
+  {
+    "objectID": "commands.html",
+    "href": "commands.html",
+    "title": "commands",
+    "section": "",
+    "text": "source\n\nadd_sidecars\n\n add_sidecars (tileset:pathlib.Path=&lt;typer.models.OptionInfo object at\n               0x7f73a9342090&gt;,\n               sidecar:pathlib.Path=&lt;typer.models.OptionInfo object at\n               0x7f73b2c83190&gt;, key:str=&lt;typer.models.OptionInfo object at\n               0x7f73a8f499d0&gt;, verbose:bool=&lt;typer.models.OptionInfo\n               object at 0x7f73a8f49a10&gt;)\n\n\nsource\n\n\nexport_conda_to_ini\n\n export_conda_to_ini ()\n\n\nsource\n\n\nrun_add_sidecars\n\n run_add_sidecars ()\n\n\nsource\n\n\nrun_export_conda_to_ini\n\n run_export_conda_to_ini ()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "featherplot",
+    "section": "",
+    "text": "# create conda environment\n$ mamba env create -f env.yml\n\n# update conda environment\n$ mamba env update -n featherplot --file env.yml\n# $ mamba env update -n featherplot --file env.mac.yml\n\n\n\npip install -e .\n\n# install from pypi\npip install featherplot\n\n\n\n# activate conda environment\n$ conda activate featherplot\n\n# make sure the featherplot package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to the featherplot package\n$ nbdev_prepare\n\n\n\n# publish to pypi\n$ nbdev_pypi\n\n# publish to conda\n$ nbdev_conda --build_args '-c conda-forge'  --mambabuild"
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "featherplot",
+    "section": "",
+    "text": "# create conda environment\n$ mamba env create -f env.yml\n\n# update conda environment\n$ mamba env update -n featherplot --file env.yml\n# $ mamba env update -n featherplot --file env.mac.yml\n\n\n\npip install -e .\n\n# install from pypi\npip install featherplot\n\n\n\n# activate conda environment\n$ conda activate featherplot\n\n# make sure the featherplot package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to the featherplot package\n$ nbdev_prepare\n\n\n\n# publish to pypi\n$ nbdev_pypi\n\n# publish to conda\n$ nbdev_conda --build_args '-c conda-forge'  --mambabuild"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "featherplot",
+    "section": "Installation",
+    "text": "Installation\nInstall latest from the GitHub repository:\n$ pip install git+https://github.com/dsm-72/featherplot-py.git\nor from conda\n$ conda install -c dsm-72 featherplot\nor from pypi\n$ pip install featherplot"
+  }
+]
