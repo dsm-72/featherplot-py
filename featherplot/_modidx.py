@@ -149,4 +149,6 @@ d = { 'settings': { 'branch': 'main',
                                    'featherplot.utils.create_lambda_channel': ('utils.html#create_lambda_channel', 'featherplot/utils.py'),
                                    'featherplot.utils.create_root_channel': ('utils.html#create_root_channel', 'featherplot/utils.py'),
                                    'featherplot.utils.get_user': ('utils.html#get_user', 'featherplot/utils.py'),
+                                   'featherplot.utils.handle_duplicate_columns': ( 'utils.html#handle_duplicate_columns',
+                                                                                   'featherplot/utils.py'),
                                    'featherplot.utils.make_temp_file': ('utils.html#make_temp_file', 'featherplot/utils.py')}}}

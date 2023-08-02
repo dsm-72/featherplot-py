@@ -3,7 +3,8 @@
 # %% auto 0
 __all__ = ['get_user', 'collapse_user', 'make_temp_file', 'QuadFeatherRenamer', 'create_lambda_channel',
            'create_conditional_channel', 'create_functional_channel', 'create_boolean_channel', 'create_color_channel',
-           'create_root_channel', 'SeriesToChannel', 'DataFrameToMetadata', 'MockSingleCellData', 'AnnDataProcessor']
+           'create_root_channel', 'SeriesToChannel', 'handle_duplicate_columns', 'DataFrameToMetadata',
+           'MockSingleCellData', 'AnnDataProcessor']
 
 # %% ../nbs/04_utils.ipynb 3
 import os, pwd, sys, json, yaml, atexit, tempfile, inspect
@@ -324,6 +325,22 @@ class SeriesToChannel:
         return channel.to_meta(**kwargs)
 
 # %% ../nbs/04_utils.ipynb 12
+def handle_duplicate_columns(df:pd.DataFrame) -> pd.DataFrame:
+    all_cols = df.columns.tolist()
+    uni_cols, col_cnts = np.unique(all_cols, return_counts=True)
+    
+    for n in uni_cols[col_cnts > 1]:
+        i = 0
+        for j, o in enumerate(all_cols):
+            if o != n:
+                continue
+            all_cols[j] = f'{n}_{i}'
+            i += 1
+            
+    df.columns = all_cols
+    return df
+
+# %% ../nbs/04_utils.ipynb 13
 @rich_auto
 @dataclass
 class DataFrameToMetadata:
@@ -429,7 +446,7 @@ class DataFrameToMetadata:
         return d
 
 
-# %% ../nbs/04_utils.ipynb 15
+# %% ../nbs/04_utils.ipynb 16
 @rich_auto
 @dataclass
 class MockSingleCellData:
@@ -573,7 +590,7 @@ class MockSingleCellData:
 
         return self._adata
 
-# %% ../nbs/04_utils.ipynb 17
+# %% ../nbs/04_utils.ipynb 18
 @rich_auto
 @dataclass
 class AnnDataProcessor:
