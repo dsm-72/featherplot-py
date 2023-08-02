@@ -5,7 +5,6 @@ __all__ = ['SEED']
 
 # %% ../nbs/02_constants.ipynb 3
 import os
-import numpy as np
 
 # %% ../nbs/02_constants.ipynb 4
 SEED = 3

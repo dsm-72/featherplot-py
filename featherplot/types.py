@@ -16,17 +16,13 @@ from dataclasses import dataclass, field, asdict
 from typing import Optional, Union, Any, List, TypeAlias, Literal, Tuple, get_args, Dict
 
 # %% ../nbs/03_types.ipynb 4
-#| export
-
-
-# %% ../nbs/03_types.ipynb 5
 QUADFEATHER_REQUIRED_COLUMNS: TypeAlias = Literal['x', 'y']
 QUADFEATHER_EXPECTED_COLUMNS: TypeAlias = Union[QUADFEATHER_REQUIRED_COLUMNS, Literal['z']]
 
-# %% ../nbs/03_types.ipynb 7
+# %% ../nbs/03_types.ipynb 6
 from typing import TypeVar
 
-# %% ../nbs/03_types.ipynb 8
+# %% ../nbs/03_types.ipynb 7
 Literals = TypeVar('Literals')
 
 @rich_auto
@@ -106,7 +102,7 @@ class QuadFeatherColumnTypeGuard(LiteralTypeGuard):
     types: Optional[Literals] = field(default_factory=lambda : [QUADFEATHER_REQUIRED_COLUMNS, QUADFEATHER_EXPECTED_COLUMNS])
 
 
-# %% ../nbs/03_types.ipynb 10
+# %% ../nbs/03_types.ipynb 9
 Transform: TypeAlias = Literal['literal', 'linaer', 'log', 'sqrt']
 
 Range: TypeAlias = Tuple[Union[int, float], Union[int, float]]
